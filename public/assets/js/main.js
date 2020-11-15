@@ -4,6 +4,26 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
+
+function copyToClipboard(value) {
+	let dummy = document.createElement("textarea");
+	document.body.appendChild(dummy);
+	
+	dummy.value = value;
+    dummy.select();
+	
+	document.execCommand("copy");
+	document.body.removeChild(dummy);
+	
+	var tooltip = document.getElementById("get-address");
+	tooltip.innerHTML = "Copied: " + value;
+}
+
+function resetTooltip() {
+	var tooltip = document.getElementById("get-address");
+	tooltip.innerHTML = "Copy to Clipboard";
+}
+
 (function($) {
 
 	// Breakpoints.

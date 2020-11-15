@@ -3130,3 +3130,77 @@
 				#footer .copyright a:hover {
 					color: #FFF;
 				}
+
+/* Card */
+
+	.card {
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		border-radius: 5px;
+		max-width: 50%;
+	}
+
+		.card:hover {
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+
+		img {
+			border-radius: 5px 5px 0 0;
+		}
+
+		.container {
+			padding: 2px 16px;
+			width: 100%;
+		}
+
+			.card-description {
+				margin: 1em 0 2em 0;
+			}
+
+			.tooltip {
+				position: relative;
+				display: inline-block;
+			}
+			
+				.card-action {
+					margin: 0 0 1.3em 0;
+					padding: 0 4em;
+				}
+				
+				.tooltip .tooltip-text {
+					visibility: hidden;
+					background-color: #555;
+					color: #fff;
+					text-align: center;
+					border-radius: 6px;
+					padding: 6px;
+					position: absolute;
+					z-index: 1;
+					bottom: 120%;
+					left: 50%;
+					margin-left: -170px;
+					opacity: 0;
+					transition: opacity 0.3s;
+				}
+				
+				.tooltip .tooltip-text::after {
+					content: "";
+					position: absolute;
+					top: 100%;
+					left: 40%;
+					margin-left: -5px;
+					border-width: 5px;
+					border-style: solid;
+					border-color: #555 transparent transparent transparent;
+				}
+				
+				.tooltip:hover .tooltip-text {
+					visibility: visible;
+					opacity: 1;
+				}
+
+		@media screen and (max-width: 736px) {
+			.card {
+				max-width: 100%;
+			}
+		}
